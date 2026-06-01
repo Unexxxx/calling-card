@@ -39,14 +39,20 @@ After visual changes, bump `CACHE_NAME` in `js/sw.js` (e.g. `calling-card-v2` �
 2. **Settings** → **Pages** → Deploy from branch **`main`**, folder **`/` (root)**.
 3. Ensure `.nojekyll` exists at repo root.
 
-## 4. NFC URL
+## 4. NFC programming (choose one)
 
-| Site type | URL |
-|-----------|-----|
+| Goal | NFC tag content |
+|------|-----------------|
+| **Instant contact, fully offline** (no website) | NFC Tools app → **Contact / vCard** record (match `contact.vcf`) |
+| **vCard only** | URL: `https://<username>.github.io/calling-card/contact.vcf` |
+| **Full card + Add to Contacts** | URL: `https://<username>.github.io/calling-card/` |
+
+| Site type | Base URL |
+|-----------|----------|
 | Project site | `https://<username>.github.io/calling-card/` |
 | User site | `https://<username>.github.io/` |
 
-Program the HTTPS URL on your NFC tag.
+Offline: after one online visit, `contact.vcf` is cached (`calling-card-v3` in `js/sw.js`).
 
 ## 5. PWA + offline
 
@@ -58,7 +64,9 @@ Program the HTTPS URL on your NFC tag.
 
 - [ ] Hero: cover + portrait + name visible on 320px width
 - [ ] Gradient bridge visible between hero and contact list
+- [ ] **Add to Contacts** opens vCard / Contacts UI (iPhone & Android)
 - [ ] Email opens mail app; phone opens dialer on mobile
+- [ ] `contact.vcf` downloads or opens when opened directly
 - [ ] `theme-color` matches brand (`#1A4352`) in browser chrome
 - [ ] Two browsers on live HTTPS (Chrome + Safari or Firefox)
 - [ ] Keyboard tab through all links

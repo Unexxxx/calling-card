@@ -1,8 +1,9 @@
-const CACHE_NAME = 'calling-card-v2';
+const CACHE_NAME = 'calling-card-v3';
 
 const PRECACHE_URLS = [
   './',
   './index.html',
+  './contact.vcf',
   './css/styles.css',
   './js/main.js',
   './manifest.webmanifest',
@@ -75,7 +76,8 @@ function isStaticAsset(pathname) {
     pathname.endsWith('.png') ||
     pathname.endsWith('.jpg') ||
     pathname.endsWith('.svg') ||
-    pathname.endsWith('.ico')
+    pathname.endsWith('.ico') ||
+    pathname.endsWith('.vcf')
   );
 }
 
