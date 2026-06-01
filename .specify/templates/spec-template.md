@@ -5,6 +5,12 @@
 **Status**: Draft  
 **Input**: User description: "$ARGUMENTS"
 
+<!--
+  Calling Card project: align scope with `.specify/memory/constitution.md` (static HTML/CSS
+  calling card). Prefer technology-agnostic requirements; note hosting/open-file steps in
+  quickstart rather than mandating frameworks unless constitution is amended.
+-->
+
 ## User Scenarios & Testing *(mandatory)*
 
 <!--

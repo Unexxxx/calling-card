@@ -31,7 +31,18 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify against `.specify/memory/constitution.md` (Calling Card v1.0.0+):
+
+| Principle | Gate (MUST pass unless Complexity Tracking justifies) |
+|-----------|--------------------------------------------------------|
+| Static-First | No server runtime required; primary content works with JS disabled |
+| Radical Simplicity | Minimal file count; no build toolchain unless justified in this plan |
+| Semantic, Accessible Markup | Semantic HTML; WCAG 2.1 AA contrast; keyboard + alt text |
+| Zero-Dependency by Default | No new third-party libs/CDNs without documented spec rationale |
+| Instant Comprehension | Name, role/tagline, primary contact obvious within ~5s on load |
+
+Also confirm Technical Constraints (mobile-first, static entry file documented) and
+Quality & Verification (manual browser check, quickstart steps) are addressed in the plan.
 
 ## Project Structure
 

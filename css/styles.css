@@ -1,0 +1,222 @@
+/* Calling card — hero + gradient bridge + contact panel */
+:root {
+  --color-theme: #1a4352;
+  --color-bridge-green: #2e7d32;
+  --color-bridge-blue: #0277bd;
+  --color-panel-bg: #f5f8fa;
+  --color-panel-text: #1a2e35;
+  --color-panel-muted: #4a5f6a;
+  --color-link: #1a4352;
+  --color-link-hover: #0277bd;
+  --color-focus: #0277bd;
+  --color-hero-overlay: rgba(26, 67, 82, 0.62);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --touch-min: 44px;
+  --max-width: 32rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  background: var(--color-panel-bg);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-panel-bg);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.08);
+}
+
+/* Hero: cover background + portrait + name */
+.hero {
+  position: relative;
+  min-height: min(52vh, 22rem);
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--color-theme);
+  background-image: url("../assets/images/cover.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 67, 82, 0.25) 0%,
+    var(--color-hero-overlay) 55%,
+    rgba(26, 67, 82, 0.88) 100%
+  );
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.hero__portrait {
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero__name {
+  margin: 0;
+  font-size: clamp(1.5rem, 6vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero__tagline {
+  margin: 0;
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Gradient bridge: cover waves → contact panel */
+.hero-bridge {
+  flex-shrink: 0;
+  height: 2.75rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-bridge-green) 0%,
+    #1b8a6e 35%,
+    var(--color-bridge-blue) 100%
+  );
+  clip-path: ellipse(120% 100% at 50% 0%);
+  margin-top: -1px;
+}
+
+/* Contact panel */
+.contact-panel {
+  flex: 1;
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  background: var(--color-panel-bg);
+}
+
+.contact-panel__address {
+  font-style: normal;
+}
+
+.contact__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-min);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #d8e2e8;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.contact__link:hover {
+  border-color: var(--color-link-hover);
+  color: var(--color-link-hover);
+}
+
+.contact__link--primary {
+  background: var(--color-theme);
+  border-color: var(--color-theme);
+  color: #ffffff;
+}
+
+.contact__link--primary:hover {
+  background: #153a48;
+  border-color: #153a48;
+  color: #ffffff;
+}
+
+.contact__link:focus {
+  outline: none;
+}
+
+.contact__link:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (min-width: 480px) {
+  .hero {
+    min-height: min(48vh, 24rem);
+  }
+
+  .hero__portrait {
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+
+  .contact-panel {
+    padding: var(--space-xl) var(--space-lg) calc(var(--space-xl) + var(--space-md));
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: var(--space-md) 0;
+  }
+}

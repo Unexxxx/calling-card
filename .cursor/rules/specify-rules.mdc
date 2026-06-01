@@ -1,0 +1,38 @@
+---
+description: Project Development Guidelines
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# calling-card Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-06-01
+
+## Active Technologies
+- HTML5, CSS3, ECMAScript (ES2020+; no transpiler) + None (browser APIs only) (001-pwa-calling-card)
+
+- HTML5, CSS3, ECMAScript (ES2020+; no transpiler) + None (browser APIs only: Service Worker, Cache Storage) (001-pwa-calling-card)
+
+## Project Structure
+
+```text
+backend/
+frontend/
+tests/
+```
+
+## Commands
+
+# Add commands for HTML5, CSS3, ECMAScript (ES2020+; no transpiler)
+
+## Code Style
+
+HTML5, CSS3, ECMAScript (ES2020+; no transpiler): Follow standard conventions
+
+## Recent Changes
+- 001-pwa-calling-card: Added HTML5, CSS3, ECMAScript (ES2020+; no transpiler) + None (browser APIs only)
+
+- 001-pwa-calling-card: Added HTML5, CSS3, ECMAScript (ES2020+; no transpiler) + None (browser APIs only: Service Worker, Cache Storage)
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

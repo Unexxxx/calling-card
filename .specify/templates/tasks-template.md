@@ -20,10 +20,17 @@ description: "Task list template for feature implementation"
 
 ## Path Conventions
 
+- **Static calling card (default)**: `index.html`, `styles/` or `css/`, `assets/` at repo
+  root or under `public/` per plan.md — no `src/` tree required unless plan specifies
 - **Single project**: `src/`, `tests/` at repository root
 - **Web app**: `backend/src/`, `frontend/src/`
 - **Mobile**: `api/src/`, `ios/src/` or `android/src/`
 - Paths shown below assume single project - adjust based on plan.md structure
+
+<!--
+  Static site features: skip Phase 2 database/auth/API tasks unless the constitution is
+  amended; use Setup + user-story phases only. Tests remain OPTIONAL per spec.
+-->
 
 <!-- 
   ============================================================================
