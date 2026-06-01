@@ -86,14 +86,10 @@ body {
   }
 }
 
-/* Hero + profile bridge container */
-.hero-stack {
-  position: relative;
-  flex-shrink: 0;
-}
-
 .hero {
   position: relative;
+  z-index: 1;
+  flex-shrink: 0;
   height: var(--hero-height);
   overflow: hidden;
 }
@@ -119,14 +115,17 @@ body {
   );
 }
 
-/* Profile centered on hero / white seam */
-.profile-bridge {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  z-index: 10;
-  transform: translate(-50%, 50%);
-  line-height: 0;
+/* Profile bridges hero + white — sits above .content in paint order */
+.profile-wrap {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: calc(var(--avatar-half) * -1);
+  margin-bottom: calc(var(--avatar-half) * -1);
+  pointer-events: none;
 }
 
 .profile__image {
@@ -138,11 +137,15 @@ body {
   border: 4px solid var(--white);
   box-shadow: var(--shadow-portrait);
   background: var(--white);
+  pointer-events: auto;
 }
 
-/* White content — top padding clears lower half of avatar */
+/* White content — padding clears space around overlapping avatar */
 .content {
+  position: relative;
+  z-index: 10;
   flex: 1;
+  width: 100%;
   background: var(--white);
   padding: calc(var(--avatar-half) + 1.25rem) 1.5rem max(2rem, env(safe-area-inset-bottom));
   animation: content-enter 0.55s var(--ease) 0.1s both;
@@ -151,11 +154,9 @@ body {
 @keyframes content-enter {
   from {
     opacity: 0;
-    transform: translateY(0.5rem);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -205,12 +206,16 @@ body {
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
+  box-sizing: border-box;
+  border: 2px solid transparent;
   transition:
     transform 0.2s var(--ease),
     box-shadow 0.2s var(--ease),
     filter 0.2s var(--ease);
   box-shadow: var(--shadow-soft);
   -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .action:focus {
@@ -257,7 +262,10 @@ body {
 .action--linkedin {
   background: var(--white);
   color: var(--ocean);
-  border: 2px solid var(--ocean);
+  border-color: var(--ocean);
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 0 0 1px var(--ocean);
 }
 
 .action--linkedin:hover {
@@ -267,7 +275,10 @@ body {
 .action--facebook {
   background: var(--white);
   color: var(--facebook);
-  border: 2px solid var(--facebook);
+  border-color: var(--facebook);
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 0 0 1px var(--facebook);
 }
 
 .action--facebook:hover {
