@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calling-card-v4';
+const CACHE_NAME = 'calling-card-v5';
 
 const PRECACHE_URLS = [
   './',
