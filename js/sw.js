@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calling-card-v3';
+const CACHE_NAME = 'calling-card-v4';
 
 const PRECACHE_URLS = [
   './',
@@ -20,7 +20,7 @@ const OFFLINE_HTML = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Offline — Calling Card</title>
   <style>
-    body { font-family: system-ui, sans-serif; background: #1A4352; color: #eaeaea;
+    body { font-family: system-ui, sans-serif; background: #0F4C6E; color: #eaeaea;
       margin: 0; min-height: 100dvh; display: grid; place-items: center; padding: 1rem;
       text-align: center; }
     p { max-width: 20rem; line-height: 1.5; }
